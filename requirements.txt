@@ -1,0 +1,7 @@
+tqdm
+click
+numpy
+argparse
+pillow
+opencv-python==4.5.5.62
+ujson==3.0.0
