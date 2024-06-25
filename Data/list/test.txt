@@ -1,0 +1,2 @@
+test_image\2.png
+
