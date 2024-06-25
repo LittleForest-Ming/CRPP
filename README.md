@@ -1,2 +1,2 @@
 # CRPP
-We will improve the tutorial after the study is published.
+We will continue to refine how to use the development tutorials as research becomes publicly available.
