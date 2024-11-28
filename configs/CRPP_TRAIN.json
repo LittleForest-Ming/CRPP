@@ -1,6 +1,6 @@
 {
     "system": {
-        "dataset": "CULANE",
+        "dataset": "",
         "batch_size": 16,
         "sampling_function": "kp_detection",
 
