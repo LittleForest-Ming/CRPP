@@ -86,10 +86,9 @@ def kp_detection(db, nnet, image_root, debug=False, evaluator=None):
                 ys = np.linspace(lower, upper, num=100)
                 points = np.zeros((len(ys), 2), dtype=np.int32)
                 points[:, 1] = (ys * img_h).astype(int)
-                points[:, 0] = ((lane[0] / (ys - lane[1]) ** 2 + lane[2] / (ys - lane[1]) + lane[3] + lane[4] * ys -
-                                 lane[5]) * img_w).astype(int)
-                # points[:, 0] = (lane[0] * ys ** 3 + lane[1] * ys ** 2 + lane[2] * ys + \
-                #           lane[3])* img_w).astype(int)
+                
+                points[:, 0] = (lane[0] * ys ** 3 + lane[1] * ys ** 2 + lane[2] * ys + \
+                           lane[3])* img_w).astype(int)
                 points = points[(points[:, 0] > 0) & (points[:, 0] < img_w)]
 
                 # draw lane with a polyline on the overlay
