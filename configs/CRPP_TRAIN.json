@@ -1,7 +1,7 @@
 {
     "system": {
         "dataset": "CULANE",
-        "batch_size": 4,
+        "batch_size": 16,
         "sampling_function": "kp_detection",
 
         "train_split": "train+val",
@@ -19,15 +19,15 @@
         "opt_algo": "adam",
         "prefetch_size": 5,
 
-        "max_iter": 50000,
-        "stepsize": 45000,
-        "snapshot": 1000,
+        "max_iter": 80000,
+        "stepsize": 75000,
+        "snapshot": 10000,
 
         "chunk_sizes": [4],
 
-        "cache_dir": "./cache",
-        "result_dir": "./results",
-        "data_dir": "G:/LSTR-culane/LSTR-culane/",
+        "cache_dir": "./detect",
+        "result_dir": "./result",
+        "data_dir": "",
 
         "res_layers": [1, 2, 2, 2],
 
@@ -42,7 +42,7 @@
         "dim_feedforward_bak": 256,
 
 
-        "kps_dim": 8,
+        "kps_dim": 6,
 
         "num_heads": 2,
         "enc_layers": 2,
