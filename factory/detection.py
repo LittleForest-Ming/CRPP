@@ -28,8 +28,8 @@ class DETECTION(BASE):
         self._configs["nms_kernel"]      = 3
 
         self._configs["nms_algorithm"]   = "exp_soft_nms"
-        self._configs["weight_exp"]      = 8
-        # self._configs["weight_exp"] = 6
+        self._configs["weight_exp"]      = 6
+        # self._configs["weight_exp"] = 5
         self._configs["merge_bbox"]      = False
         
         self._configs["data_aug"]        = True
