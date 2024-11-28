@@ -378,8 +378,11 @@ class CORN(DETECTION):
 
             points = np.zeros((len(ys), 2), dtype=np.int32)
             points[:, 1] = (ys * img_h).astype(int)
-            points[:, 0] = ((lane[0] / (ys - lane[1]) ** 2 + lane[2] / (ys - lane[1]) + lane[3] + lane[4] * ys -
-                             lane[5]) * img_w).astype(int)
+            points[:, 0] = (lane[0] * ys ** 3 + lane[1] * ys ** 2 + lane[2] * ys + \
+                           lane[3])* img_w).astype(int)
+
+            # points[:, 0] = (lane[0] * ys ** 2 + lane[1] * ys ** 1 + \
+            #       lane[2])* img_w).astype(int)
 
             points = points[(points[:, 0] > 0) & (points[:, 0] < img_w)]
 
