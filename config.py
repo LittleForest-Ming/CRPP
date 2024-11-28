@@ -12,11 +12,11 @@ class Config:
 
         # Training Config
         self._configs["display"]           = 5
-        self._configs["snapshot"]          = 1000
-        self._configs["stepsize"]          = 45000
+        self._configs["snapshot"]          = 10000
+        self._configs["stepsize"]          = 55000
         self._configs["learning_rate"]     = 0.00025
         self._configs["decay_rate"]        = 10
-        self._configs["max_iter"]          = 50000
+        self._configs["max_iter"]          = 60000
         self._configs["val_iter"]          = 100
         self._configs["batch_size"]        = 4
         self._configs["snapshot_name"]     = None
