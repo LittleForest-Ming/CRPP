@@ -23,8 +23,8 @@
         "stepsize": 450000,
         "snapshot": 5000,
 
-        "cache_dir": "./cache",
-        "result_dir": "./results",
+        "cache_dir": "./detect",
+        "result_dir": "./result",
         "data_dir": "../../",
 
         "res_layers": [1, 2, 2, 2],
@@ -33,7 +33,7 @@
         "attn_dim": 32,
         "dim_feedforward": 128,
 
-        "kps_dim": 8,
+        "kps_dim": 6, 
 
         "num_heads": 2,
         "enc_layers": 2,
