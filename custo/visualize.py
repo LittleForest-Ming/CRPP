@@ -113,8 +113,11 @@ def save_batch_image_with_dbs(batch_image,
                     points = np.zeros((len(ys), 2), dtype=np.int32)
                     points[:, 1] = (ys * H).astype(int)
                     # Calculate the predicted xs
-                    points[:, 0] = ((lane[0] / (ys - lane[1]) ** 2 + lane[2] / (ys - lane[1]) + lane[3] + lane[4] * ys - lane[5])
-                                    * W).astype(int)
+                    points[:, 0] = (lane[0] * ys ** 3 + lane[1] * ys ** 2 + lane[2] * ys + \
+                           lane[3])* img_w).astype(int)
+
+                    # points[:, 0] = (lane[0] * ys ** 2 + lane[1] * ys ** 1 + \
+                    #       lane[2])* img_w).astype(int)
 
                     points = points[(points[:, 0] > 0) & (points[:, 0] < W)]
                     points[:, 0] += x * width + padding
