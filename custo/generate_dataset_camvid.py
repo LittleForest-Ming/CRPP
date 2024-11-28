@@ -37,16 +37,16 @@ def mergeMotion(workspace_dir, frame_start, frame_end):
             k2_mat = np.clip(k2_mat, 0, w - 1)
 
             dp[j1_mat[..., np.newaxis], k1_mat[..., np.newaxis], np.ones([h, w, 1], dtype=np.int32) * f1] = np.where(
-                np.tile((flow[..., 2] == 90)[..., np.newaxis, np.newaxis], (1, 1, 1, 3)),  # 如果是90就维持原样
+                np.tile((flow[..., 2] == 90)[..., np.newaxis, np.newaxis], (1, 1, 1, 3)),  
                 dp[j1_mat[..., np.newaxis], k1_mat[..., np.newaxis], np.ones([h, w, 1], dtype=np.int32) * f1],
-                np.where(  # 如果不是90
-                    np.tile(  # 如果 father 还有 father
+                np.where(  
+                    np.tile(  
                         (dp[j2_mat[..., np.newaxis], k2_mat[..., np.newaxis], f2_mat[..., np.newaxis]][..., 2] != -1)
                         [..., np.newaxis],
                         (1, 1, 1, 3)
                     ),
-                    dp[j2_mat[..., np.newaxis], k2_mat[..., np.newaxis], f2_mat[..., np.newaxis]],  # 链接到 grandfather
-                    np.stack([k2_mat, j2_mat, f2_mat], axis=-1)[..., np.newaxis, :]  # 否则链接到 father
+                    dp[j2_mat[..., np.newaxis], k2_mat[..., np.newaxis], f2_mat[..., np.newaxis]],  
+                    np.stack([k2_mat, j2_mat, f2_mat], axis=-1)[..., np.newaxis, :]  
                 )
             )
     k1_mat, j1_mat = np.meshgrid(range(w), range(h))
